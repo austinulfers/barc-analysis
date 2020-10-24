@@ -38,7 +38,7 @@ def sample_threshold():
         )
         # Open and close mask to reduce noise contours
         morph = cv2.morphologyEx(mask, cv2.MORPH_CLOSE, kernel)
-        cv2.imshow("Mask Image, C-Value: %i" % c, mask)
+        cv2.imshow("Mask Image, C-Value: %i" % c, morph)
         cv2.waitKey(0)
 
 if __name__ == "__main__":
