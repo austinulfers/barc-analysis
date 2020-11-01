@@ -8,7 +8,6 @@ class App:
     def __init__(self):
         self.pref()
         st.title("Material Sample Thresholding")
-        self.run()
 
     def pref(self):
         """Sets the page preferences for the application.
@@ -16,7 +15,7 @@ class App:
         st.beta_set_page_config(layout="wide")
 
     def run(self):
-        """
+        """Runs the application function.
         """
         col_1, col_2 = st.beta_columns(2)
         file_path = col_1.text_input("Image Filepath")
@@ -56,3 +55,4 @@ class App:
 
 if __name__ == "__main__":
     app = App()
+    app.run()
