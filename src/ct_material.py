@@ -8,10 +8,15 @@ import numpy as np
 import cv2
 import re
 from barc.ctscan.Reconstruct import construct, render
+import configparser
 
-MAX_DIST_THRESH = 15
-MAX_LAST_LAYER_SURFACE_AREA = 100
+config = configparser.ConfigParser()
+config.read("config.ini")
 
+MAX_DIST_THRESH = int(config["HYPERPARAMETERS"]["MAX_DIST_THRESHOLD"])
+MAX_LAST_LAYER_SURFACE_AREA = \
+    int(config["HYPERPARAMETERS"]["MAX_LAST_LAYER_SURFACE_AREA"])
+    
 class ct_material(object):
     """The material class that takes in z layers of ct-scans and performs operations on them. Works
     in part with the ZLayer class.

@@ -12,11 +12,14 @@ from shapely.geometry import MultiPolygon
 from shapely.ops import cascaded_union
 import math
 from scipy.spatial import ConvexHull
+import configparser
 
-MASK_PERCENTILE = 1.5
-MAX_DEFECT_AREA = 10000
-MIN_DEFECT_AREA = 5
-BLOCK_SIZE = 151
+config = configparser.ConfigParser()
+config.read("config.ini")
+
+MAX_DEFECT_AREA = int(config["HYPERPARAMETERS"]["MAX_DEFECT_AREA"])
+MIN_DEFECT_AREA = int(config["HYPERPARAMETERS"]["MIN_DEFECT_AREA"])
+BLOCK_SIZE = int(config["HYPERPARAMETERS"]["BLOCK_SIZE"])
 
 def target_area(img_folder:str) -> tuple:
     """Returns the area of both of the target areas in pixels.
