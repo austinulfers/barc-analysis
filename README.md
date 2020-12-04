@@ -1,4 +1,5 @@
-# BARC-Analysis
+
+# BARC-Analysis [![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://share.streamlit.io/austinulfers/barc-analysis/main/src/inspect_material.py)
 
 Material Analysis & Model Creation for BARC
 
